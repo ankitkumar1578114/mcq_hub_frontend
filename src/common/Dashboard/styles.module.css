@@ -1,0 +1,19 @@
+.grand_parent{
+    padding-top:56px;
+}
+.parent{
+    display: flex;
+    width:100%;
+    height:100%;
+    justify-content: space-between;
+    margin:auto;
+    gap:12px;
+}
+.left{
+    width:260px;
+}
+.right{
+    margin:36px 18px;
+    width:calc(100% - 260px);
+    border-radius: 6px;
+}

@@ -1,0 +1,11 @@
+.skelton{
+    animation-name: example;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    border-radius: 4px;
+}
+@keyframes example {
+    0%   {background-color: #1f1f1f;}
+    50%  {background-color: #242424;}
+    100%   {background-color: #1f1f1f;}
+  }

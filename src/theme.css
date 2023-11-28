@@ -1,0 +1,11 @@
+:root{
+  --color-background:#121212;
+  --color-primary_background:rgba(255,255,255,2%);
+  --color-secondary_background:rgb(255,255,255,5%);
+  --color-tirtary_background:rgb(43, 43, 43);
+  --color-quaternary_background:rgb(53, 53, 53);
+  --color-primary_text:white;
+  --color-secondary_text:rgb(218, 218, 218);
+  --box_shadow_primary:  0 0 10px 1px rgba(12, 12, 12, 0.377);
+  --box_shadow_secondary:  0 0 100x 1px rgba(19, 19, 19, 0.849);
+}
