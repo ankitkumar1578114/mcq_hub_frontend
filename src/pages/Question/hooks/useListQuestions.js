@@ -3,7 +3,7 @@ import useRequest from '../../../common/hooks/useRequest'
 const useListQuestions = ({ activeTab }) => {
   const { data, loading, trigger } = useRequest({
     url: 'question/list_questions',
-    method: 'post',
+    method: 'get',
     isConfig: true
   })
 

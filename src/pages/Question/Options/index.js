@@ -13,7 +13,7 @@ const Options = ({ selectedOption, setSelectedOption = () => {}, watch = () => {
         Object.values(option)?.map((option, index) =>
           (
             <div key={index} className={selectedOption === index && option ? styles.selected_option : styles.option} onClick={() => option !== '' && setSelectedOption(index)}>
-                {`${String.fromCharCode(65 + index)}. ${option}` || 'Please Enter Option First!'}
+                {`${String.fromCharCode(65 + index)}. ${option || ''}`}
             </div>
           ))
     }
