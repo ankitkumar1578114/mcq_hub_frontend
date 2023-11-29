@@ -1,4 +1,3 @@
-import IconScreen from '../Components/Icons/IconScreen'
 import styles from './styles.module.css'
 const Welcome = () => {
   const galaryImages = [

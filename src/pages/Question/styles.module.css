@@ -1,0 +1,9 @@
+.question_prep_table{
+    background-color: var(--color-primary_background);
+    padding:10px;
+    margin-bottom:10px;
+    border-radius: 6px;
+}
+.questions_table{
+    margin-top:20px;
+}

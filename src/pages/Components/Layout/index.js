@@ -58,15 +58,15 @@ const Layout = ({ handleSubmit, register, onSubmit, controls, submitBtnName = 'S
         <div className={style.form}>
         {
           controls.map((control) => {
-            const { label, key, options, type, loading, disabled, placeholder = '', rules } = control
-            if (type === 'text') { return (<><Input label={label} _key={key} register={register} error={errors?.[key]} rules={rules} placeholder={placeholder}/></>) }
-            if (type === 'select') { return (<> <Select label={label} {...register(key, { required: rules?.required })} options={options} placeholder={placeholder} loading={loading} disabled={disabled} error={errors?.[key]} rules={rules}/></>) }
-            if (type === 'player-select') { return (<> <PlayerSelect label={label} {...register(key, { required: rules?.required })} options={options} placeholder={placeholder} loading={loading} disabled={disabled} error={errors?.[key]} rules={rules}/></>) }
-            if (type === 'team-select') { return (<> <TeamSelect label={label} {...register(key, { required: rules?.required })} options={options} placeholder={placeholder} loading={loading} disabled={disabled} error={errors?.[key]} rules={rules}/></>) }
-            if (type === 'venue-select') { return (<> <VenueSelect label={label} {...register(key, { required: rules?.required })} options={options} placeholder={placeholder} loading={loading} disabled={disabled} error={errors?.[key]} rules={rules}/></>) }
-            if (type === 'series-select') { return (<> <SeriesSelect label={label} {...register(key, { required: rules?.required })} options={options} placeholder={placeholder} loading={loading} disabled={disabled} error={errors?.[key]} rules={rules}/></>) }
-            if (type === 'date') { return (<><Date label={label} _key={key} register={register} required={control?.rules?.required} rules={rules} error={errors?.[key]} disabled={disabled} /></>) }
-            if (type === 'datetime') { return (<><DateTimeLocal label={label} _key={key} register={register} disabled={disabled} required={control?.rules?.required} rules={rules} error={errors?.[key]} /></>) }
+            const { label, key, options, type, loading, disabled, placeholder = '', rules, span = 4 } = control
+            if (type === 'text') { return (<><Input label={label} _key={key} register={register} error={errors?.[key]} rules={rules} placeholder={placeholder} span={span}/></>) }
+            if (type === 'select') { return (<> <Select label={label} {...register(key, { required: rules?.required })} options={options} placeholder={placeholder} loading={loading} disabled={disabled} error={errors?.[key]} rules={rules} span={span}/></>) }
+            if (type === 'player-select') { return (<> <PlayerSelect label={label} {...register(key, { required: rules?.required })} options={options} placeholder={placeholder} loading={loading} disabled={disabled} error={errors?.[key]} rules={rules} span={span}/></>) }
+            if (type === 'team-select') { return (<> <TeamSelect label={label} {...register(key, { required: rules?.required })} options={options} placeholder={placeholder} loading={loading} disabled={disabled} error={errors?.[key]} rules={rules} span={span}/></>) }
+            if (type === 'venue-select') { return (<> <VenueSelect label={label} {...register(key, { required: rules?.required })} options={options} placeholder={placeholder} loading={loading} disabled={disabled} error={errors?.[key]} rules={rules} span={span}/></>) }
+            if (type === 'series-select') { return (<> <SeriesSelect label={label} {...register(key, { required: rules?.required })} options={options} placeholder={placeholder} loading={loading} disabled={disabled} error={errors?.[key]} rules={rules} span={span}/></>) }
+            if (type === 'date') { return (<><Date label={label} _key={key} register={register} required={control?.rules?.required} rules={rules} error={errors?.[key]} disabled={disabled} span={span}/></>) }
+            if (type === 'datetime') { return (<><DateTimeLocal label={label} _key={key} register={register} disabled={disabled} required={control?.rules?.required} rules={rules} error={errors?.[key]} span={span}/></>) }
             return null
           })
         }

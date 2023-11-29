@@ -6,5 +6,5 @@ export const navigation = [{
 },
 {
   path: '/question'
-},
+}
 ]

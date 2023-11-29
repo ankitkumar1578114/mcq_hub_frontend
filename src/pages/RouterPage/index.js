@@ -11,7 +11,7 @@ const Comp = ({ path }) => {
   return {
     '/': <WelcomePage/>,
     '/dashboard': <DashboardPage/>,
-    '/question': <QuestionPage/>,
+    '/question': <QuestionPage/>
   }[path]
 }
 

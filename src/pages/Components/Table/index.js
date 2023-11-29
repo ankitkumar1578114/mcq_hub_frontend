@@ -1,6 +1,6 @@
 import styles from './styles.module.css'
 import Skelton from '../Skelton'
-const Table = ({ columns, data, loading }) => {
+const Table = ({ columns, data, loading, thStyle = {}, tdStyle = {} }) => {
   if (loading) {
     return <>
             <Skelton width="100%" height="300px"/>
@@ -14,7 +14,7 @@ const Table = ({ columns, data, loading }) => {
                 <tr className={styles.tr}>
                     {
                         columns?.map((column) => (
-                            <th className={styles.th} key={column?.key}>{column?.header}</th>
+                            <th className={styles.th} style={thStyle} key={column?.key}>{column?.header}</th>
                         ))
                     }
                 </tr>
@@ -24,7 +24,7 @@ const Table = ({ columns, data, loading }) => {
                         <tr className={styles.tr} key={index}>
                             {
                                 columns?.map((column) => (
-                                    <td className={styles.td} key={column?.key}>
+                                    <td className={styles.td} style={tdStyle} key={column?.key}>
                                         {
                                             (typeof (column?.accessor) === 'string')
                                               ? (item[column?.accessor] || index + 1)

@@ -1,4 +1,4 @@
-.button,.primary,.secondary{
+.button,.primary,.secondary,.tirtiary{
     padding:10px;
     font-size:14px;
     border: 0;
@@ -6,7 +6,7 @@
     border-radius: 6px;
     box-shadow: 0 0 4px 1px rgba(93, 93, 93, 0.186);
     cursor: pointer;    
-    font-weight: 600;
+    font-weight: 500;
     opacity:0.8;
     transition:opacity 0.2s;
 }
@@ -15,10 +15,14 @@
     color:rgb(252, 252, 252);
 }
 .secondary{
-    background-color: rgb(105, 105, 105);
+    background-color: rgb(207, 146, 65);
     color:rgb(255, 255, 255);
 }
-.primary:hover,.secondary:hover{
+.tirtiary{
+    background-color: rgb(236, 56, 56);
+    color:rgb(255, 255, 255);
+}
+.primary:hover,.secondary:hover,.tirtiary:hover{
     box-shadow: 0 0 1px 4px rgba(0, 0, 0, 0.144);
     opacity:1
 }

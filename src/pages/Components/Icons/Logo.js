@@ -4,7 +4,7 @@ const Logo = () => {
   return (
         <>
         <Link to="/" style={{ color: 'white', textDecoration: 'none', fontSize: '20px' }}>
-            Crickshow
+            MCQ Hub
         </Link>
         </>
   )

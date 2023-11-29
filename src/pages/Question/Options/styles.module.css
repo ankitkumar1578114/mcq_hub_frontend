@@ -1,0 +1,20 @@
+.options {
+    margin:20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+}
+.option ,.selected_option{
+    width:calc(50% - 30px);
+    height:40px;
+    border:1px solid rgb(117, 117, 117);
+    border-radius: 10px; 
+    padding:10px;   
+    color:rgb(173, 173, 173);
+    cursor: pointer;
+}
+
+.selected_option{
+    border:1px solid rgb(224, 224, 224);
+    color:rgb(235, 235, 235);
+}

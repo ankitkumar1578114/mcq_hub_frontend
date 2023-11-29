@@ -5,7 +5,8 @@ const Button = ({ value, onClick = () => {}, type = 'primary' }) => {
       {
         primary: styles.primary,
         submit: styles.primary,
-        secondary: styles.secondary
+        secondary: styles.secondary,
+        tirtiary: styles.tirtiary
       }[type]
       }>
 

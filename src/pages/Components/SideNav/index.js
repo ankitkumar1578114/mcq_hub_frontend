@@ -11,7 +11,7 @@ const SideNav = ({ user, setUser, setUserLoaded }) => {
     {
       key: '/question',
       label: 'Question'
-    },
+    }
   ]
   const location = useLocation()
   const [activeTab, setActiveTab] = useState(location?.pathname)

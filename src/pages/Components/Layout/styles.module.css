@@ -3,7 +3,7 @@
     color:rgb(199, 199, 199);
 }
 .input,.normal_input{
-    width:300px;
+    width:calc(100% - 28px);
     padding:10px 14px;
     color:rgb(218, 218, 218);
     background-color: rgb(34, 34, 34);
@@ -15,7 +15,7 @@
 }
 
 .normal_input{
-    width:calc(300px - 30px)
+    width:calc(100% - 30px)
 }
 
 
