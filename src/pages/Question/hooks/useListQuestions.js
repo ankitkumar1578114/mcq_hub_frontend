@@ -22,6 +22,7 @@ const useListQuestions = ({ activeTab }) => {
   return {
     loading,
     data: data?.data,
+    total: data?.total,
     options: data?.data,
     listQuestions
   }

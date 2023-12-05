@@ -17,7 +17,7 @@ const Question = () => {
 
   const controls = questionControl()
   const { register, handleSubmit, formState: { errors }, reset, watch } = useForm()
-  const { data, listQuestions } = useListQuestions({ activeTab })
+  const { data, listQuestions, total } = useListQuestions({ activeTab })
   const { createQuestion } = useCreateQuestion({ reset, listQuestions, selectedOption, setSelectedOption })
   const { deleteQuestion } = useDeleteQuestion({ listQuestions })
 
@@ -28,7 +28,7 @@ const Question = () => {
                             <Options selectedOption={selectedOption} setSelectedOption={setSelectedOption} watch={watch}/>
                      </div>
                      <div className={styles.questions_table}>
-                            <Tabs active={activeTab} onChange={(index) => setActiveTab(index)} tabs={['All Questions', 'My Questions']} ></Tabs>
+                            <Tabs active={activeTab} onChange={(index) => setActiveTab(index)} tabs={[`All Questions (${total})`, 'My Questions']} ></Tabs>
                                    <div style={{ marginTop: '4px' }}>
                                           <Table columns={questionTableColumns({ deleteQuestion })} data={data} thStyle={{ textAlign: 'left' }} tdStyle={{ textAlign: 'left' }}/>
                                    </div>
