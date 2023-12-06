@@ -1,6 +1,6 @@
 import useRequest from '../../../common/hooks/useRequest'
 
-const useCreateQuestion = ({ reset = () => {}, listQuestions = () => {}, selectedOption, setSelectedOption = () => {} }) => {
+const useCreateQuestion = ({ reset = () => {}, listQuestions = () => {}, selectedOption, setSelectedOption = () => {}, tags = [] }) => {
   const { data, loading, trigger } = useRequest({
     url: 'question/create_question',
     method: 'post',
@@ -11,8 +11,10 @@ const useCreateQuestion = ({ reset = () => {}, listQuestions = () => {}, selecte
       alert('Please select Answer first')
       return
     }
+    console.log(tags)
     await trigger({
       ...data,
+      tags,
       answer: selectedOption,
       created_by: 0
     })
