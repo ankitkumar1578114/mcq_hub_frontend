@@ -6,12 +6,14 @@ import WelcomePage from '../Welcome'
 import Navigations from '../Navigation'
 import { navigation } from './navigation'
 import DashboardPage from '../DashboardPage'
+import PrivacyPolicyPage from '../PrivacyPolicyPage'
 
 const Comp = ({ path }) => {
   return {
     '/': <WelcomePage/>,
     '/dashboard': <DashboardPage/>,
-    '/question': <QuestionPage/>
+    '/question': <QuestionPage/>,
+    '/privacy-policy': <PrivacyPolicyPage/>
   }[path]
 }
 
@@ -19,11 +21,11 @@ const Router = () => {
   const [userLoaded, setUserLoaded] = useState(false)
   const [user, setUser] = useState(null)
 
+  const isPrivacyPage = (location.pathname === '/privacy-policy')
   return (
         <>
           {
-            !user && <Navigations user={user} setUser={setUser} setUserLoaded={setUserLoaded}/>
-
+            !user && !isPrivacyPage ? <Navigations user={user} setUser={setUser} setUserLoaded={setUserLoaded}/> : null
           }
             <Dashboard user={user} setUser={setUser} setUserLoaded={setUserLoaded} userLoaded={userLoaded}>
               <Routes>
