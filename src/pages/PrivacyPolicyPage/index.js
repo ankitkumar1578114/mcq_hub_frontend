@@ -1,4 +1,4 @@
-import './index.css'
+import './styles.css'
 const PrivacyPolicyPage = () => {
   return <>
         <h1>MCQ HUB Privacy Policy</h1>
