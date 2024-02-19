@@ -8,9 +8,9 @@ import { navigation } from './navigation'
 import DashboardPage from '../DashboardPage'
 import PrivacyPolicyPage from '../PrivacyPolicyPage'
 
-const Comp = ({ path }) => {
+const Comp = ({ path, setUser, setUserLoaded }) => {
   return {
-    '/': <WelcomePage/>,
+    '/': <WelcomePage setUser={setUser} setUserLoaded={setUserLoaded}/>,
     '/dashboard': <DashboardPage/>,
     '/question': <QuestionPage/>,
     '/privacy-policy': <PrivacyPolicyPage/>
@@ -31,7 +31,7 @@ const Router = () => {
               <Routes>
                   {
                     navigation.map((nav, index) => (
-                      <Route key={index} path={nav?.path} element={<Comp {...{ path: nav?.path }}/>} />
+                      <Route key={index} path={nav?.path} element={<Comp {...{ path: nav?.path }} setUser={setUser} setUserLoaded={setUserLoaded} />} />
                     ))
                   }
               </Routes>

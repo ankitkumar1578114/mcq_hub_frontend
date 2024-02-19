@@ -59,7 +59,7 @@ const Layout = ({ handleSubmit, register, onSubmit, controls, submitBtnName = 'S
         {
           controls.map((control) => {
             const { label, key, options, type, loading, disabled, placeholder = '', rules, span = 4 } = control
-            if (type === 'text') { return (<><Input label={label} _key={key} register={register} error={errors?.[key]} rules={rules} placeholder={placeholder} span={span}/></>) }
+            if (type === 'text') { return (<><Input label={label} _key={key} register={register} error={errors?.[key]} rules={rules} placeholder={placeholder} span={span} disabled={disabled}/></>) }
             if (type === 'select') { return (<> <Select label={label} {...register(key, { required: rules?.required })} options={options} placeholder={placeholder} loading={loading} disabled={disabled} error={errors?.[key]} rules={rules} span={span}/></>) }
             if (type === 'player-select') { return (<> <PlayerSelect label={label} {...register(key, { required: rules?.required })} options={options} placeholder={placeholder} loading={loading} disabled={disabled} error={errors?.[key]} rules={rules} span={span}/></>) }
             if (type === 'team-select') { return (<> <TeamSelect label={label} {...register(key, { required: rules?.required })} options={options} placeholder={placeholder} loading={loading} disabled={disabled} error={errors?.[key]} rules={rules} span={span}/></>) }

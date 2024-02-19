@@ -11,7 +11,6 @@ const useCreateQuestion = ({ reset = () => {}, listQuestions = () => {}, selecte
       alert('Please select Answer first')
       return
     }
-    console.log(tags)
     await trigger({
       ...data,
       tags,

@@ -15,7 +15,6 @@ const useDeleteQuestion = ({ listQuestions = () => {} }) => {
         id
       }
     })
-    console.log('hellow')
     await listQuestions()
   }
   return {
