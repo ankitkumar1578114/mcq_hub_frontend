@@ -7,3 +7,9 @@
 .questions_table{
     margin-top:20px;
 }
+
+.flex{
+    display: flex;
+    margin:10px;
+    gap:10px;
+}

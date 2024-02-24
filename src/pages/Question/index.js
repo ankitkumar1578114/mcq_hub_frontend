@@ -11,6 +11,7 @@ import Options from './Options'
 import styles from './styles.module.css'
 import useDeleteQuestion from './hooks/useDeleteQuestion'
 import Tags from './Tags'
+import Button from '../Components/Button'
 
 const Question = () => {
   const [activeTab, setActiveTab] = useState(0)
@@ -18,7 +19,7 @@ const Question = () => {
 
   const controls = questionControl()
   const { register, handleSubmit, formState: { errors }, reset, watch } = useForm()
-  const { data, listQuestions, total } = useListQuestions({ activeTab })
+  const { data, listQuestions, total, setPage, page } = useListQuestions({ activeTab  })
   const [tags, setTags] = useState([])
   const { createQuestion } = useCreateQuestion({ reset, listQuestions, selectedOption, setSelectedOption, tags })
   const { deleteQuestion } = useDeleteQuestion({ listQuestions })
@@ -34,6 +35,14 @@ const Question = () => {
                                    <div style={{ marginTop: '4px' }}>
                                           <Table columns={questionTableColumns({ deleteQuestion })} data={data} thStyle={{ textAlign: 'left' }} tdStyle={{ textAlign: 'left' }}/>
                                    </div>
+                            <div className={styles.flex}>
+                                   {
+                                          page !== 0 ?
+                                          <Button value = "Prev" type='secondary' onClick={()=>setPage(page-1)} />
+                                          : null
+                                   }
+                                   <Button value = "Next" onClick={()=>setPage(page+1)}/>
+                            </div>
                      </div>
               </div>
          </>
