@@ -11,6 +11,10 @@ const SideNav = ({ user, setUser, setUserLoaded }) => {
     {
       key: '/question',
       label: 'Question'
+    },
+    {
+      key:'/user',
+      label: 'User'
     }
   ]
   const location = useLocation()

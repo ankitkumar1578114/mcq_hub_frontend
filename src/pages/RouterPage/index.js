@@ -7,12 +7,14 @@ import Navigations from '../Navigation'
 import { navigation } from './navigation'
 import DashboardPage from '../DashboardPage'
 import PrivacyPolicyPage from '../PrivacyPolicyPage'
+import UserPage from '../UserPage'
 
 const Comp = ({ path, setUser, setUserLoaded }) => {
   return {
     '/': <WelcomePage setUser={setUser} setUserLoaded={setUserLoaded}/>,
     '/dashboard': <DashboardPage/>,
     '/question': <QuestionPage/>,
+    '/user': <UserPage />,
     '/privacy-policy': <PrivacyPolicyPage/>
   }[path]
 }

@@ -6,5 +6,8 @@ export const navigation = [{
 },
 {
   path: '/question'
+},
+{
+  path: '/user'
 }
 ]

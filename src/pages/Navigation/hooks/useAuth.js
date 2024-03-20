@@ -16,8 +16,6 @@ const useAuth = ({ setUser, setUserLoaded }) => {
     } catch (err) {
       setUserLoaded(true)
       console.log(err, 'err')
-      localStorage.removeItem('token')
-      localStorage.removeItem('profileData')
     }
   }
   const errorMessage = (error) => {

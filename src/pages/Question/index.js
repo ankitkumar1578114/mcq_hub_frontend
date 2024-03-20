@@ -19,30 +19,37 @@ const Question = () => {
 
   const controls = questionControl()
   const { register, handleSubmit, formState: { errors }, reset, watch } = useForm()
-  const { data, listQuestions, total, setPage, page } = useListQuestions({ activeTab  })
+  const [filterTags,setFilterTags] = useState([])
+  const { data, listQuestions, total, setPage, page } = useListQuestions({ activeTab , filterTags })
   const [tags, setTags] = useState([])
   const { createQuestion } = useCreateQuestion({ reset, listQuestions, selectedOption, setSelectedOption, tags })
   const { deleteQuestion } = useDeleteQuestion({ listQuestions })
   return <>
               <div>
                      <div className={styles.question_prep_table}>
+                            <Tags tags={tags} setTags={setTags}/>
                             <Layout register={register} handleSubmit={handleSubmit} onSubmit={createQuestion} controls={controls} errors={errors}/>
                             <Options selectedOption={selectedOption} setSelectedOption={setSelectedOption} watch={watch}/>
-                            <Tags tags={tags} setTags={setTags}/>
                      </div>
                      <div className={styles.questions_table}>
+                            <div className={styles.flex_space_between}>
+                                   <div>
+                                          <Tags tags={filterTags} setTags={setFilterTags}/>
+                                   </div>
+                                   <div className={styles.flex}>
+                                          {
+                                                 page !== 0 ?
+                                                 <Button value = "Prev" type='secondary' onClick={()=>setPage(page-1)} />
+                                                 : null
+                                          }
+                                          <Button value = "Next" onClick={()=>setPage(page+1)}/>
+                                   </div>
+                            </div>
+
                             <Tabs active={activeTab} onChange={(index) => setActiveTab(index)} tabs={[`All Questions (${total})`, 'My Questions']} ></Tabs>
                                    <div style={{ marginTop: '4px' }}>
                                           <Table columns={questionTableColumns({ deleteQuestion })} data={data} thStyle={{ textAlign: 'left' }} tdStyle={{ textAlign: 'left' }}/>
                                    </div>
-                            <div className={styles.flex}>
-                                   {
-                                          page !== 0 ?
-                                          <Button value = "Prev" type='secondary' onClick={()=>setPage(page-1)} />
-                                          : null
-                                   }
-                                   <Button value = "Next" onClick={()=>setPage(page+1)}/>
-                            </div>
                      </div>
               </div>
          </>

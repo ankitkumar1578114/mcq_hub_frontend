@@ -13,3 +13,8 @@
     margin:10px;
     gap:10px;
 }
+
+.flex_space_between{
+    display: flex;
+    justify-content: space-between;
+}

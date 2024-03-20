@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import useRequest from '../../../common/hooks/useRequest'
-const useListQuestions = ({ activeTab }) => {
+const useListQuestions = ({ activeTab, filterTags }) => {
 
   const [ page, setPage ] = useState(0);
 
   const { data, loading, trigger } = useRequest({
-    url: 'question/list_questions?page=' + page,
+    url: 'question/list_questions?page=' + page + '&filterTags='+JSON.stringify(filterTags),
     method: 'get',
     isConfig: true
   })
@@ -13,7 +13,7 @@ const useListQuestions = ({ activeTab }) => {
   const listQuestions = async () => {
     const payload = {
       filters: {
-        created_by: activeTab === 1 ? 0 : undefined
+        created_by: activeTab === 1 ? 0 : undefined,
       },
     }
     trigger(payload)
@@ -21,7 +21,7 @@ const useListQuestions = ({ activeTab }) => {
 
   useEffect(() => {
     listQuestions()
-  }, [activeTab, page])
+  }, [activeTab, page, JSON.stringify(filterTags)])
   return {
     page,
     setPage,
